@@ -9,8 +9,8 @@ env:
   NUGET_SOURCE_URL: https://api.nuget.org/v3/index.json
 
 jobs:
-  build:
-    name: Build
+  publish:
+    name: Publish
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -26,14 +26,9 @@ jobs:
                
       - name: Build project
         run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
-        
-  publish:
-    name: Publish
-    runs-on: ubuntu-20.04
-    needs: 
-      - build
-    steps:
+          
       - name: Pack
         run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --include-symbols --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }} 
+      
       - name: Publish
         run: dotnet nuget push ${{ env.PACKAGE_OUTPUT_DIRECTORY }}\*.nupkg -k ${{ secrets.NUGET_API_TOKEN }} -s ${{ env.NUGET_SOURCE_URL }}
