@@ -9,6 +9,8 @@
         <Description>Bolerplate code to make applying CQRS pattern easier in projects. </Description>
         <RepositoryUrl>https://github.com/aaronuurman/CQRS.Boilerplate</RepositoryUrl>
         <PackageTags>CQRS</PackageTags>
+        <PackageProjectUrl>https://github.com/aaronuurman/CQRS.Boilerplate</PackageProjectUrl>
+        <PackageLicenseUrl>https://licenses.nuget.org/MIT</PackageLicenseUrl>
     </PropertyGroup>
 
     <ItemGroup>
