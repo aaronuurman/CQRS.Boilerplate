@@ -2,6 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>0.0.1</PackageVersion>
+        <Title>CQRS Boilerplate</Title>
+        <Authors>Aaron Uurman</Authors>
+        <Description>Bolerplate code to make applying CQRS pattern easier in projects. </Description>
+        <RepositoryUrl>https://github.com/aaronuurman/CQRS.Boilerplate</RepositoryUrl>
+        <PackageTags>CQRS</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,0 +1,26 @@
+name: "Deploy to NuGet"
+
+on:
+  push:
+
+env:
+  PROJECT_PATH: CQRS.Boilerplate.csproj
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Install dotnet
+        uses: actions/setup-dotnet@v1
+        with: 
+          dotnet-version: 5.0.x
+          
+      - name: Restore packages
+        run: dotnet restore ${{ env.PROJECT_PATH }}
+               
+      - name: Build project
+        run: dotnet restore ${{ env.PROJECT_PATH }} --no-restore --configuration Release
