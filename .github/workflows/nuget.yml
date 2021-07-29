@@ -23,4 +23,4 @@ jobs:
         run: dotnet restore ${{ env.PROJECT_PATH }}
                
       - name: Build project
-        run: dotnet restore ${{ env.PROJECT_PATH }} --no-restore --configuration Release
+        run: dotnet build ${{ env.PROJECT_PATH }} --no-restore --configuration Release
