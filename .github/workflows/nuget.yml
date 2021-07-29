@@ -5,7 +5,7 @@ on:
 
 env:
   PROJECT_PATH: CQRS.Boilerplate.csproj
-  PACKAGE_OUTPUT_DIRECTORY: ${{ GITHUB_WORKSPACE }}\output
+  PACKAGE_OUTPUT_DIRECTORY: ${{ GITHUB.WORKSPACE }}\output
   NUGET_SOURCE_URL: https://api.nuget.org/v3/index.json
 
 jobs:
